@@ -1,5 +1,5 @@
-```react
-import React, { useState, useEffect, useRef } from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 
 // --- 資料結構 (Data Flow) ---
 // 這裡模擬你提到的 data.json，抽離內容與 UI 邏輯
@@ -74,7 +74,7 @@ export default function App() {
       threshold: 0
     };
 
-    const observerCallback = (entries) => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveChapter(entry.target.id);
@@ -200,5 +200,3 @@ export default function App() {
     </div>
   );
 }
-
-```
